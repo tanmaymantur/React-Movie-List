@@ -15,20 +15,18 @@ const Nav = styled.div`
     
 `
 
-export default class Navbar extends Component {
+export default function Navbar(props) {
 
-    render() {
-        const { cartCount } = this.props;
-        return (
-            <Nav height='70px'>
-                <div style={styles.title}>Movie-App</div>
-                <div style={styles.cartContainer}>
-                    <img style={styles.cartIcon} src="https://cdn-icons-png.flaticon.com/128/1170/1170678.png" alt="cart icon" />
-                    <span style={styles.cartCount}>{cartCount}</span>
-                </div>
-            </Nav>
-        )
-    }
+    const { cartCount } = props;
+    return (
+        <Nav height='70px'>
+            <div style={styles.title}>Movie-App</div>
+            <div style={styles.cartContainer}>
+                <img style={styles.cartIcon} src="https://cdn-icons-png.flaticon.com/128/1170/1170678.png" alt="cart icon" />
+                <span style={styles.cartCount}>{cartCount}</span>
+            </div>
+        </Nav>
+    )
 }
 
 const styles = {
